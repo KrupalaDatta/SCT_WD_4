@@ -1,0 +1,156 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #1e1e2f;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  background: #2c2c3f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffff44;
+}
+
+h1 {
+  text-align: center;
+  color: #00ffff;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+button {
+  background-color: #00ffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #444;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.task-text.done {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.task-meta {
+  font-size: 0.8em;
+  color: #aaa;
+}
+
+.actions button {
+  margin-left: 8px;
+  cursor: pointer;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.actions .edit { background: #ff0; }
+.actions .delete { background: #f44; color: #fff; }
+.actions .complete { background: #0f0; color: #000; }
+.priority-high {
+  border-left: 4px solid red;
+}
+.priority-medium {
+  border-left: 4px solid orange;
+}
+.priority-low {
+  border-left: 4px solid green;
+}
+
+.task-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+#task-list li:hover {
+  box-shadow: 0 0 20px #00ffff88;
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#task-list li {
+  animation: fadeIn 0.4s ease;
+}
+.priority-high {
+  border-left: 4px solid red;
+  animation: pulsePriority 1.5s infinite;
+}
+
+@keyframes pulsePriority {
+  0%, 100% { box-shadow: 0 0 8px red; }
+  50% { box-shadow: 0 0 20px red; }
+}
+h1 {
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; text-shadow: 0 0 30px #0ff; }
+}
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  10%  { transform: translateX(-10px); }
+  20%  { transform: translateX(10px); }
+  30%  { transform: translateX(-10px); }
+  40%  { transform: translateX(10px); }
+  50%  { transform: translateX(-6px); }
+  60%  { transform: translateX(6px); }
+  70%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  90%  { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
